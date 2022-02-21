@@ -7,14 +7,14 @@ import Newsletter from "../components/Newsletter";
 import Products from "../components/Products";
 import Slider from "../components/Slider";
 import NavMenu from "../components/Menu";
-import TemporaryDrawer from "../components/SideBar";
+
+import PageHeader from "../components/PageHeader";
 
 const Home = () => {
   return (
-    <div>
-      <Announcement />
-      <Navbar/>
-      <NavMenu/>
+    <div dir="rtl">
+      <PageHeader/>
+
       <Slider/>
       <Categories />
       <Products/>
