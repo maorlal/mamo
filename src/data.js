@@ -27,16 +27,19 @@ export const sliderItems = [
       id: 1,
       img: "https://www.teahub.io/photos/full/228-2285589_luxury-watch-wallpaper-watches-stock.jpg",
       title: "שעונים",
+      ref:"/poductlist",
     },
     {
       id: 2,
       img: "https://cdn.thewirecutter.com/wp-content/uploads/2017/10/marijuana-grinder-2x1-lowres-9493.jpg?auto=webp&quality=75&crop=2:1&width=1024",
       title: "מוצרי עישון",
+      ref:"/poductlist",
     },
     {
       id: 3,
       img: "https://www.susutech.com.ng/wp-content/uploads/2019/08/Top-6-Day-to-Day-Helpful-High-Tech-Gadgets-1030x515.jpg",
       title: "יום יום",
+      ref:"/poductlist",
     },
   ];
 

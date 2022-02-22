@@ -12,6 +12,7 @@ import {
 import React from "react";
 import styled from "styled-components";
 import { mobile } from "../responsive";
+import { useNavigate, Link } from "react-router-dom";
 //import { styled } from '@mui/material/styles';
 
 const Container = styled.div`
@@ -98,6 +99,7 @@ const PhoneNumber = styled.a`
 `;
 
 const Navbar = () => {
+  let navigate = useNavigate();
   return (
     <Container>
       <Wrapper>
@@ -112,7 +114,13 @@ const Navbar = () => {
           </PhoneNumber>
         </Right>
         <Center>
-          <Logo>MAMO</Logo>
+          <Logo
+            onClick={() => {
+              navigate("/");
+            }}
+          >
+            MAMO
+          </Logo>
         </Center>
         <Left>
           <MenuItem>
