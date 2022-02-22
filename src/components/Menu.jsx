@@ -41,7 +41,7 @@ const Container = styled("div")`
   direction: rtl;
 `;
 
-const Wrapper = styled("div")`
+const Wrapper = styled(Grid)`
   padding: 5px 5px;
 
   border: #000000;
@@ -66,7 +66,7 @@ const BarMenuWrapper = styled(Grid)`
   ${mobile({ display: "none" })}
 `;
 
-const SideMenuWrapper = styled("div")`
+const SideMenuWrapper = styled(Grid)`
   display: none;
   @media screen and (max-width: 768px) {
     display: flex;
@@ -79,7 +79,7 @@ const SideMenuWrapper = styled("div")`
 `;
 
 const MenuItemsList = [
-  { name: "שעונים", ref: "/ref" },
+  { name: "שעונים", ref: "../" },
   { name: "יום יום", ref: "/ref" },
   { name: "אביזרי עישון", ref: "/ref" },
   { name: "משחקים", ref: "/ref" },
@@ -128,7 +128,12 @@ export default function NavMenu() {
 
   return (
     <Container>
-      <Wrapper>
+      <Wrapper
+        container
+        direction="row"
+        justifyContent="space-between"
+        alignItems="center"
+      >
         <BarMenuWrapper
           container
           direction="row"
@@ -145,6 +150,7 @@ export default function NavMenu() {
         </BarMenuWrapper>
         <SideMenuWrapper>
           <SideBar />
+          <SearchIcon/>
         </SideMenuWrapper>
       </Wrapper>
     </Container>
