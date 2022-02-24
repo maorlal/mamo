@@ -9,6 +9,7 @@ import {
 } from "@material-ui/icons";
 import styled from "styled-components";
 import { mobile } from "../responsive";
+import {Grid, Box} from "@mui/material"
 
 const Container = styled.div`
   display: flex;
@@ -81,7 +82,7 @@ const ContactItem = styled.div`
 `;
 
 const Payment = styled.img`
-    width: 50%;
+    
 `;
 
 const Footer = () => {
@@ -90,9 +91,7 @@ const Footer = () => {
       <Left>
         <Logo>MAMO</Logo>
         <Desc>
-          There are many variations of passages of Lorem Ipsum available, but
-          the majority have suffered alteration in some form, by injected
-          humour, or randomised words which don’t look even slightly believable.
+        ניתן לפנות אלינו בכל שאלה בכל עת ונדאג לחזור אליכם תוך 24 שעות
         </Desc>
         <SocialContainer>
           <SocialIcon color="3B5999">
@@ -110,9 +109,9 @@ const Footer = () => {
         </SocialContainer>
       </Left>
       <Center>
-        <Title>Useful Links</Title>
-        <List>
-          <ListItem>Home</ListItem>
+        <Title>מקבלים כרטיסי אשראי</Title>
+        {/* <List>
+          <ListItem>עמוד הבית</ListItem>
           <ListItem>Cart</ListItem>
           <ListItem>Man Fashion</ListItem>
           <ListItem>Woman Fashion</ListItem>
@@ -122,20 +121,44 @@ const Footer = () => {
           <ListItem>Wishlist</ListItem>
           <ListItem>Wishlist</ListItem>
           <ListItem>Terms</ListItem>
-        </List>
+        </List> */}
+        <Box sx={{ width: "auto" , height: "auto" }}>
+        <Grid 
+        container 
+        spacing={1}
+        direction="row"
+        alignItems="center"
+        >
+          {/* should change into map move src to data file */}
+          <Grid>
+          <Payment src="https://www.ninja-polo.com/images/visa.png" />
+          </Grid>
+          <Grid>
+          <Payment src="https://www.ninja-polo.com/images/isracard.png" />
+            </Grid>
+            <Grid>
+          <Payment src="https://www.ninja-polo.com/images/mastercard.png" />
+            </Grid>
+            <Grid>
+          <Payment src="https://www.ninja-polo.com/images/diners.png" />
+            </Grid>
+            <Grid>
+          <Payment src="https://www.ninja-polo.com/images/americanexpress.png" />
+            </Grid>
+        </Grid>
+          </Box>
       </Center>
       <Right>
-        <Title>Contact</Title>
+        <Title>צור קשר</Title>
         <ContactItem>
-          <Room style={{marginRight:"10px"}}/> 622 Dixie Path , South Tobinchester 98336
+          <Room style={{marginRight:"10px"}}/> כפר גלעדי 5 , תל אביב
         </ContactItem>
         <ContactItem>
-          <Phone style={{marginRight:"10px"}}/> +1 234 56 78
+          <Phone style={{marginRight:"10px"}}/> 03-5555555
         </ContactItem>
         <ContactItem>
           <MailOutline style={{marginRight:"10px"}} /> contact@MAMO.co.il
-        </ContactItem>
-        <Payment src="https://i.ibb.co/Qfvn4z6/payment.png" />
+        </ContactItem>       
       </Right>
     </Container>
   );

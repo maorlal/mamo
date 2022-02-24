@@ -5,8 +5,11 @@ import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import Newsletter from "../components/Newsletter";
 import { mobile } from "../responsive";
+import {Box} from '@mui/material';
 
-const Container = styled.div``;
+const Container = styled.div`
+padding-top: 7%;
+`;
 
 const Wrapper = styled.div`
   padding: 50px;
@@ -14,15 +17,18 @@ const Wrapper = styled.div`
   ${mobile({ padding: "10px", flexDirection:"column" })}
 `;
 
-const ImgContainer = styled.div`
+const ImgContainer = styled(Box)`
   flex: 1;
+  height: 300px;
+  width: 30px;
+  /* margin-right: -10%; */
 `;
 
 const Image = styled.img`
-  width: 100%;
-  height: 90vh;
+  /* width: 100%;
+  height: 90vh; */
   object-fit: cover;
-  ${mobile({ height: "40vh" })}
+  ${mobile({ height: "40vh" , width: "38vh" })}
 `;
 
 const InfoContainer = styled.div`
@@ -118,11 +124,9 @@ const Button = styled.button`
 const Product = () => {
   return (
     <Container>
-      <Navbar />
-      <Announcement />
       <Wrapper>
         <ImgContainer>
-          <Image src="https://i.ibb.co/S6qMxwr/jean.jpg" />
+          <Image src="https://m.media-amazon.com/images/I/51VBBnMfE8L._AC_SX425_.jpg" />
         </ImgContainer>
         <InfoContainer>
           <Title>Denim Jumpsuit</Title>
@@ -133,16 +137,16 @@ const Product = () => {
             tristique tortor pretium ut. Curabitur elit justo, consequat id
             condimentum ac, volutpat ornare.
           </Desc>
-          <Price>$ 20</Price>
+          <Price>₪ 20</Price>
           <FilterContainer>
             <Filter>
-              <FilterTitle>Color</FilterTitle>
+              <FilterTitle>צבע</FilterTitle>
               <FilterColor color="black" />
               <FilterColor color="darkblue" />
               <FilterColor color="gray" />
             </Filter>
             <Filter>
-              <FilterTitle>Size</FilterTitle>
+              <FilterTitle>גודל</FilterTitle>
               <FilterSize>
                 <FilterSizeOption>XS</FilterSizeOption>
                 <FilterSizeOption>S</FilterSizeOption>
@@ -152,18 +156,17 @@ const Product = () => {
               </FilterSize>
             </Filter>
           </FilterContainer>
-          <AddContainer>
+          {/* <AddContainer>
             <AmountContainer>
               <Remove />
               <Amount>1</Amount>
               <Add />
             </AmountContainer>
             <Button>ADD TO CART</Button>
-          </AddContainer>
+          </AddContainer> */}
         </InfoContainer>
       </Wrapper>
-      <Newsletter />
-      <Footer />
+
     </Container>
   );
 };

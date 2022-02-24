@@ -5,6 +5,7 @@ import Products from "../components/Products";
 import Newsletter from "../components/Newsletter";
 import Footer from "../components/Footer";
 import { mobile } from "../responsive";
+import { useNavigate, Link , MemoryRouter  } from "react-router-dom";
 
 const Container = styled.div``;
 
@@ -39,42 +40,45 @@ const Option = styled.option``;
 const ProductList = () => {
   return (
     <Container>
-      <Title>Dresses</Title>
+      
+
+      <Title>מוצרים</Title>
       <FilterContainer>
         <Filter>
-          <FilterText>Filter Products:</FilterText>
+          <FilterText>סינון מוצרים:</FilterText>
           <Select>
             <Option disabled selected>
-              Color
+              קטגוריה
             </Option>
-            <Option>White</Option>
-            <Option>Black</Option>
-            <Option>Red</Option>
-            <Option>Blue</Option>
-            <Option>Yellow</Option>
-            <Option>Green</Option>
+            <Option>מטריות</Option>
+            <Option>מצתים</Option>
+            <Option>מגשים</Option>
+            <Option>אלקטורניקה</Option>
+            <Option>יום יום</Option>
+            <Option>טבק</Option>
           </Select>
-          <Select>
+          {/* <Select>
             <Option disabled selected>
-              Size
+              גודל
             </Option>
             <Option>XS</Option>
             <Option>S</Option>
             <Option>M</Option>
             <Option>L</Option>
             <Option>XL</Option>
-          </Select>
+          </Select> */}
         </Filter>
         <Filter>
-          <FilterText>Sort Products:</FilterText>
+          <FilterText>מיון מוצרים:</FilterText>
           <Select>
-            <Option selected>Newest</Option>
-            <Option>Price (asc)</Option>
-            <Option>Price (desc)</Option>
+            <Option selected>חדשים</Option>
+            <Option>מחיר</Option>
+            <Option>גודל</Option>
           </Select>
         </Filter>
       </FilterContainer>
       <Products />
+      
     </Container>
   );
 };

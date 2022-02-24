@@ -5,6 +5,7 @@ import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import Newsletter from "../components/Newsletter";
 import Products from "../components/Products";
+import Product from "../pages/Product";
 import Slider from "../components/Slider";
 import NavMenu from "../components/Menu";
 import {
@@ -14,6 +15,7 @@ import {
   Routes,
   useLocation,
   useNavigate,
+  MemoryRouter,
 } from "react-router-dom";
 
 import PageHeader from "../components/PageHeader";
@@ -21,16 +23,17 @@ import ProductList from "./ProductList";
 
 const Home = () => {
   return (
-    <BrowserRouter>
+    <MemoryRouter initialEntries={['/inbox']} initialIndex={0}>
       <div dir="rtl">
         <PageHeader />
         <Routes>
           <Route path="/poductlist" element={<ProductList />} /> 
+          <Route path="/product" element={<Product />} />
           <Route path="*" element={<Page />} />
         </Routes>
         <Footer />
       </div>
-    </BrowserRouter>
+    </MemoryRouter>
   );
 };
 
