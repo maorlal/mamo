@@ -129,25 +129,24 @@ const Product = () => {
           <Image src="https://m.media-amazon.com/images/I/51VBBnMfE8L._AC_SX425_.jpg" />
         </ImgContainer>
         <InfoContainer>
-          <Title>Denim Jumpsuit</Title>
+          <Title>מוצר מוצר</Title>
           <Desc>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-            venenatis, dolor in finibus malesuada, lectus ipsum porta nunc, at
-            iaculis arcu nisi sed mauris. Nulla fermentum vestibulum ex, eget
-            tristique tortor pretium ut. Curabitur elit justo, consequat id
-            condimentum ac, volutpat ornare.
+          תיאור מוצר תיאור מוצר תיאור מוצר 
+          תיאור מוצר תיאור מוצר תיאור מוצר 
+          תיאור מוצר תיאור מוצר תיאור מוצר
           </Desc>
-          <Price>₪ 20</Price>
+          <Price> 20 ₪</Price>
           <FilterContainer>
             <Filter>
-              <FilterTitle>צבע</FilterTitle>
+              <FilterTitle>צבע: </FilterTitle>
               <FilterColor color="black" />
               <FilterColor color="darkblue" />
               <FilterColor color="gray" />
             </Filter>
             <Filter>
-              <FilterTitle>גודל</FilterTitle>
+              <FilterTitle>גודל:  </FilterTitle>
               <FilterSize>
+              <FilterSizeOption> </FilterSizeOption>
                 <FilterSizeOption>XS</FilterSizeOption>
                 <FilterSizeOption>S</FilterSizeOption>
                 <FilterSizeOption>M</FilterSizeOption>

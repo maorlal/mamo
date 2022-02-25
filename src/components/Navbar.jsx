@@ -28,7 +28,7 @@ const Wrapper = styled.div`
   padding: 10px 20px;
   display: flex;
   justify-content: space-between;
-  ${mobile({ padding: "0px 0px" })}
+  ${mobile({ padding: "0px 10px"  })}
   margin: auto;
   margin-bottom: 1%;
 `;
@@ -44,7 +44,7 @@ const Center = styled.div`
   flex: 5;
   text-align: center;
   position: relative;
-  ${mobile({ flex: 1, justifyContent: "left" })}
+  ${mobile({ flex: 0, justifyContent: "left" })}
 `;
 const Right = styled.div`
   flex: 1;
@@ -108,8 +108,8 @@ const Navbar = () => {
             <Input placeholder="חיפוש"></Input>
             <Search style={{ color: "gray", fontSize: 25 }} />
           </SearchContainer>
-          <PhoneNumber href="tel:03-5514312">
-            03-5514312
+          <PhoneNumber href="tel:03-5555555">
+            03-5555555
             <Phone />
           </PhoneNumber>
         </Right>

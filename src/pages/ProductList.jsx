@@ -41,7 +41,6 @@ const ProductList = () => {
   return (
     <Container>
       
-
       <Title>מוצרים</Title>
       <FilterContainer>
         <Filter>

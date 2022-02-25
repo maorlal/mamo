@@ -32,19 +32,20 @@ const theme = createTheme({
 
 const Container = styled("div")`
   height: 30px;
-
   border-bottom-style: solid;
   border-bottom-color: #c5c5c5;
   border-bottom-width: 1px;
-  padding-left: 10%;
-  padding-right: 10%;
+  padding-left: 2%;
+  padding-right: 15%;
+  padding-bottom: 1%;
   direction: rtl;
+  
 `;
 
 const Wrapper = styled(Grid)`
   padding: 5px 5px;
-
   border: #000000;
+  ${mobile({ padding:"0px 0px" })}
 `;
 
 const BarMenuItem = styled("a")`
@@ -70,9 +71,9 @@ const SideMenuWrapper = styled(Grid)`
   display: none;
   @media screen and (max-width: 768px) {
     display: flex;
-    margin-top: -3%;
+    /* margin-top: -3%; */
     position: inherit;
-    justify-content: right;
+    /* justify-content: right; */
     margin-right: -21%;
     cursor: pointer;
   }
@@ -111,6 +112,13 @@ const Input = styled("input")`
   ${mobile({ width: "50px" })}
 `;
 
+const StyledButton = styled(IconButton)`
+   display: none;
+  @media screen and (max-width: 768px) {
+   display: flex;
+  }
+`;
+
 const ITEM_HEIGHT = 48;
 
 export default function NavMenu() {
@@ -133,6 +141,7 @@ export default function NavMenu() {
         direction="row"
         justifyContent="space-between"
         alignItems="center"
+        
       >
         <BarMenuWrapper
           container
@@ -150,8 +159,10 @@ export default function NavMenu() {
         </BarMenuWrapper>
         <SideMenuWrapper>
           <SideBar />
-          <SearchIcon/>
         </SideMenuWrapper>
+        <StyledButton>
+          <SearchIcon />
+        </StyledButton>
       </Wrapper>
     </Container>
   );
