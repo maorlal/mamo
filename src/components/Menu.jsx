@@ -26,33 +26,40 @@ import { Divider } from "@material-ui/core";
 // import InputBase from '@mui/material/InputBase';
 import SearchIcon from "@mui/icons-material/Search";
 
-const theme = createTheme({
-  direction: "rtl",
-});
+// const theme = createTheme({
+//   direction: "rtl",
+//   palette: {
+//     mode: 'dark',
+//   },
+// });
 
 const Container = styled("div")`
   height: 30px;
+  padding-left: 5%;
+  padding-right: 5%;
   border-bottom-style: solid;
-  border-bottom-color: #c5c5c5;
+  border-bottom-color: #D4AF37;
   border-bottom-width: 1px;
-  padding-left: 2%;
-  padding-right: 15%;
-  padding-bottom: 1%;
+  ${mobile({
+    paddingLeft: "2%",
+    paddingRight: "15%",
+    paddingBottom: "2%",
+  })}
+  /* padding-bottom: 1%; */
   direction: rtl;
-  
 `;
 
 const Wrapper = styled(Grid)`
   padding: 5px 5px;
   border: #000000;
-  ${mobile({ padding:"0px 0px" })}
+  ${mobile({ padding: "0px 0px" })}
 `;
 
 const BarMenuItem = styled("a")`
   margin-left: 10px;
   margin-right: 10px;
   font-size: 18px;
-  color: #000000;
+  color: #D4AF37;
   &:hover {
     color: #cacaca;
   }
@@ -113,9 +120,9 @@ const Input = styled("input")`
 `;
 
 const StyledButton = styled(IconButton)`
-   display: none;
+  display: none;
   @media screen and (max-width: 768px) {
-   display: flex;
+    display: flex;
   }
 `;
 
@@ -141,7 +148,6 @@ export default function NavMenu() {
         direction="row"
         justifyContent="space-between"
         alignItems="center"
-        
       >
         <BarMenuWrapper
           container
@@ -151,7 +157,7 @@ export default function NavMenu() {
         >
           {MenuItemsList.map((item) => (
             <BarMenuWrapper>
-              <BarMenuItem key={item} onClick={Refresh}>
+              <BarMenuItem key={item}>
                 {item.name}
               </BarMenuItem>
             </BarMenuWrapper>

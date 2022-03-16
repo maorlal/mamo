@@ -7,7 +7,7 @@ display: contents;
 justify-content: right;
 display: flex;
 border-bottom-style: solid;
-border-bottom-color: #c5c5c5;
+border-bottom-color: #D4AF37;
 border-bottom-width: 1px;
 ${mobile({ display: "none"})}
 `;
@@ -24,7 +24,7 @@ margin-left: 10px;
 margin-right: 10px;
 display: inline-block;
 font-size: 16px;
-color: black;
+color: #D4AF37;
 &:hover{
     color: #cacaca;
 }

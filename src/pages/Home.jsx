@@ -20,6 +20,13 @@ import {
 
 import PageHeader from "../components/PageHeader";
 import ProductList from "./ProductList";
+import { createTheme , ThemeProvider } from '@mui/material/styles';
+
+const darkTheme = createTheme({
+  palette: {
+    mode: 'dark',
+  },
+});
 
 const Home = () => {
   return (
@@ -44,7 +51,6 @@ const Page = () => {
 
   return (
     <div>
-
       <Slider />
       <Categories />
       <Products />

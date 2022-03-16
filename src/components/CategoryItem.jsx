@@ -56,7 +56,7 @@ const Title = styled.h1`
 const SButton = styled(Button)`
   border: none;
   padding: 10px;
-  background-color: white;
+  /* background-color: white; */
   color: gray;
   cursor: pointer;
   font-weight: 600;

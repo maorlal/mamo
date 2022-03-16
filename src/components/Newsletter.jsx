@@ -4,7 +4,7 @@ import { mobile } from "../responsive";
 
 const Container = styled.div`
   height: 60vh;
-  background-color: #fcf5f5;
+  /* background-color: #fcf5f5; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -26,7 +26,7 @@ const Desc = styled.div`
 const InputContainer = styled.div`
   width: 50%;
   height: 40px;
-  background-color: white;
+  /* background-color: white; */
   display: flex;
   justify-content: space-between;
   border: 1px solid lightgray;
@@ -42,7 +42,7 @@ const Input = styled.input`
 const Button = styled.button`
   flex: 1;
   border: none;
-  background-color: teal;
+  /* background-color: teal; */
   color: white;
 `;
 

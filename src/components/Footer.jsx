@@ -10,6 +10,7 @@ import {
 import styled from "styled-components";
 import { mobile } from "../responsive";
 import {Grid, Box} from "@mui/material"
+import logo from "./images/logo.jpeg"
 
 const Container = styled.div`
   display: flex;
@@ -23,7 +24,9 @@ const Left = styled.div`
   padding: 20px;
 `;
 
-const Logo = styled.h1``;
+const Logo = styled.img`
+  width: 40%;
+`;
 
 const Desc = styled.p`
   margin: 20px 0px;
@@ -89,7 +92,7 @@ const Footer = () => {
   return (
     <Container>
       <Left>
-        <Logo>MAMO</Logo>
+        <Logo src={logo}></Logo>
         <Desc>
         ניתן לפנות אלינו בכל שאלה בכל עת ונדאג לחזור אליכם תוך 24 שעות
         </Desc>
@@ -154,7 +157,7 @@ const Footer = () => {
           <Room style={{marginRight:"10px"}}/> כפר גלעדי 5 , תל אביב
         </ContactItem>
         <ContactItem>
-          <Phone style={{marginRight:"10px"}}/> 03-5555555
+          <Phone style={{marginRight:"10px"}}/> 03-6825549
         </ContactItem>
         <ContactItem>
           <MailOutline style={{marginRight:"10px"}} /> contact@MAMO.co.il

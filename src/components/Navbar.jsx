@@ -1,4 +1,4 @@
-import { Badge } from "@material-ui/core";
+import { Badge, Paper } from "@material-ui/core";
 import {
   Facebook,
   Phone,
@@ -9,52 +9,55 @@ import {
   Subscriptions,
   MoreVert,
 } from "@material-ui/icons";
+
 import React from "react";
-import styled from "styled-components";
+import { styled } from "@mui/material/styles";
 import { mobile } from "../responsive";
 import { useNavigate, Link } from "react-router-dom";
-//import { styled } from '@mui/material/styles';
+import { Box, Grid, ButtonBase , TextField} from "@mui/material";
+import logo from "./images/logo.jpeg";
 
-const Container = styled.div`
-  height: 100px;
+const Container = styled("div")`
+  height: 135px;
   ${mobile({ height: "35px" })}
   direction: rtl;
   border-bottom-style: solid;
-  border-bottom-color: #c5c5c5;
+  border-bottom-color: #D4AF37;
   border-bottom-width: 1px;
 `;
 
-const Wrapper = styled.div`
-  padding: 10px 20px;
+const Wrapper = styled(Grid)`
+  height: inherit;
+  /* padding: 10px 20px;
   display: flex;
   justify-content: space-between;
-  ${mobile({ padding: "0px 10px"  })}
+  align-content: center; */
+  ${mobile({ padding: "0px 10px" })}
   margin: auto;
   margin-bottom: 1%;
 `;
 
-const Left = styled.div`
-  display: flex;
+const Left = styled(Grid)`
+  /* display: flex;
   margin: auto;
-  flex: 1;
+  align-content: center;
+  flex: 1; */
   ${mobile({ display: "none" })}
 `;
 
-const Center = styled.div`
-  flex: 5;
-  text-align: center;
-  position: relative;
+const Center = styled(Grid)`
+
   ${mobile({ flex: 0, justifyContent: "left" })}
 `;
-const Right = styled.div`
-  flex: 1;
+const Right = styled(Grid)`
+  /* flex: 1;
   display: flex;
   position: relative;
-  justify-content: right;
+  justify-content: right; */
   ${mobile({ flex: 2, justifyContent: "center" })}
 `;
 
-const SearchContainer = styled.div`
+const SearchContainer = styled("div")`
   display: flex;
   align-items: center;
   margin-left: 25px;
@@ -65,26 +68,28 @@ const SearchContainer = styled.div`
   ${mobile({ display: "none" })}
 `;
 
-const Input = styled.input`
+const Input = styled("input")`
   border: none;
   height: 30px;
   ${mobile({ width: "50px" })}
 `;
 
-const Logo = styled.h1`
-  font-weight: bold;
-  font-size: 4em;
-  ${mobile({ fontSize: "30px" })}
+const Logo = styled("img")`
+  margin: auto;
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  ${mobile({ height: "30%" })}
 `;
 
-const MenuItem = styled.div`
+const MenuItem = styled(Grid)`
   font-size: 14px;
   cursor: pointer;
   margin-left: 25px;
   ${mobile({ fontSize: "12px", marginLeft: "10px" })}
 `;
 
-const PhoneNumber = styled.a`
+const PhoneNumber = styled("a")`
   display: none;
   @media only screen and (max-width: 768px) {
     display: flex;
@@ -102,41 +107,56 @@ const Navbar = () => {
   let navigate = useNavigate();
   return (
     <Container>
-      <Wrapper>
-        <Right>
+      <Wrapper
+        container
+        direction="row"
+        justifyContent="space-between"
+        alignItems="center"
+      >
+        <Right item>
           <SearchContainer>
-            <Input placeholder="חיפוש"></Input>
-            <Search style={{ color: "gray", fontSize: 25 }} />
+          <TextField
+          id="outlined-search"
+          label="חיפוש"
+          type="search"
+          
+          color="secondary"
+        />
+            
           </SearchContainer>
-          <PhoneNumber href="tel:03-5555555">
-            03-5555555
+          <PhoneNumber href="tel:03-6825549">
+            03-6825549
             <Phone />
           </PhoneNumber>
         </Right>
-        <Center>
-          <Logo
+        <Center item>
+          <ButtonBase
+            sx={{ width: 340, height: 140 }}
             onClick={() => {
               navigate("/");
             }}
           >
-            MAMO
-          </Logo>
+            <Logo alt="complex" src={logo}></Logo>
+          </ButtonBase>
         </Center>
-        <Left>
-          <MenuItem>
-            <Instagram fontSize="large" />
+        <Left item>
+          <Grid xs container direction="row">
+
+          <MenuItem item>
+            <Instagram color="error" fontSize="large" />
           </MenuItem>
-          <MenuItem>
-            <Facebook fontSize="large" />
+          <MenuItem item>
+            <Facebook color="error" fontSize="large" />
           </MenuItem>
-          <MenuItem>
-            <AccountCircle fontSize="large" />
+          <MenuItem item>
+            <AccountCircle color="error" fontSize="large" />
           </MenuItem>
           <MenuItem>
             <Badge badgeContent={0} color="primary">
-              <ShoppingCartOutlined fontSize="large" />
+              <ShoppingCartOutlined color="error" fontSize="large" />
             </Badge>
           </MenuItem>
+          </Grid>
         </Left>
       </Wrapper>
     </Container>
