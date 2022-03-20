@@ -1,59 +1,48 @@
-import styled from "styled-components";
-import { mobile ,  } from "../responsive";
+import { Toolbar, Typography } from "@mui/material";
+import { styled } from "@mui/material/styles";
+import { mobile } from "../responsive";
 
-const Container = styled.div`
-height: 30px;
-display: contents;
-justify-content: right;
-display: flex;
-border-bottom-style: solid;
-border-bottom-color: #D4AF37;
-border-bottom-width: 1px;
-${mobile({ display: "none"})}
+const Container = styled("div")`
+  height: 25px;
+  display: contents;
+  display: flex;
+  border-bottom-style: solid;
+  border-bottom-color: #d4af37;
+  border-bottom-width: 1px;
+  ${mobile({ display: "none" })}
 `;
 
-const Wrapper = styled.div`
-padding: 5px 5px;
-display: flex;
-justify-content: space-between;
-border: #000000;
+const Wrapper = styled("div")`
+  /* padding: 5px 5px; */
+  display: flex;
+  justify-content: space-between;
 `;
 
-const TopMenuItem = styled.a`
-margin-left: 10px;
-margin-right: 10px;
-display: inline-block;
-font-size: 16px;
-color: #D4AF37;
-&:hover{
+const TopMenuItem = styled(Typography)`
+  margin-left: 10px;
+  margin-right: 10px;
+  display: inline-block;
+  font-size: 16px;
+  &:hover {
     color: #cacaca;
-}
-text-decoration: none;
-&::before{
+  }
+  text-decoration: none;
+  &::before {
     content: "";
-}
+  }
 `;
 
 const Announcement = () => {
-    return <Container>
+  return (
+    <Container>
       <Wrapper>
-    <TopMenuItem href="/page/ret">
-        מדיניות החלפות והחזרות
-    </TopMenuItem> 
-    <TopMenuItem href="/page/ret">
-        אודותינו
-    </TopMenuItem>
-    <TopMenuItem href="/page/ret">
-        תקנון
-    </TopMenuItem>
-    <TopMenuItem href="/page/ret">
-        מאמרים
-    </TopMenuItem>
-    </Wrapper>
-    
-    
-    
-    </Container>;
+        <TopMenuItem href="/page/ret">מדיניות החלפות והחזרות</TopMenuItem>
+        <TopMenuItem href="/page/ret">אודותינו</TopMenuItem>
+        <TopMenuItem href="/page/ret">תקנון</TopMenuItem>
+        <TopMenuItem href="/page/ret">מאמרים</TopMenuItem>
+      </Wrapper>
+    </Container>
+  );
 };
 
 export default Announcement;

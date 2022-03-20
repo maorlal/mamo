@@ -21,6 +21,7 @@ import {
 import PageHeader from "../components/PageHeader";
 import ProductList from "./ProductList";
 import { createTheme , ThemeProvider } from '@mui/material/styles';
+import { Toolbar } from "@mui/material";
 
 const darkTheme = createTheme({
   palette: {
@@ -31,15 +32,15 @@ const darkTheme = createTheme({
 const Home = () => {
   return (
     <MemoryRouter initialEntries={['/inbox']} initialIndex={0}>
-      <div dir="rtl">
         <PageHeader />
+        <Toolbar sx={{height: '120px'}}/>
         <Routes>
           <Route path="/poductlist" element={<ProductList />} /> 
           <Route path="/product" element={<Product />} />
           <Route path="*" element={<Page />} />
         </Routes>
-        <Footer />
-      </div>
+        <Toolbar sx={{height: '200px'}}/>
+        <Footer /> 
     </MemoryRouter>
   );
 };

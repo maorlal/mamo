@@ -59,7 +59,7 @@ const BarMenuItem = styled("a")`
   margin-left: 10px;
   margin-right: 10px;
   font-size: 18px;
-  color: #D4AF37;
+ 
   &:hover {
     color: #cacaca;
   }

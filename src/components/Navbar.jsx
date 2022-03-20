@@ -8,13 +8,14 @@ import {
   ShoppingCartOutlined,
   Subscriptions,
   MoreVert,
+  BorderColor,
 } from "@material-ui/icons";
 
 import React from "react";
 import { styled } from "@mui/material/styles";
 import { mobile } from "../responsive";
 import { useNavigate, Link } from "react-router-dom";
-import { Box, Grid, ButtonBase , TextField} from "@mui/material";
+import { Box, Grid, ButtonBase, TextField } from "@mui/material";
 import logo from "./images/logo.jpeg";
 
 const Container = styled("div")`
@@ -22,7 +23,7 @@ const Container = styled("div")`
   ${mobile({ height: "35px" })}
   direction: rtl;
   border-bottom-style: solid;
-  border-bottom-color: #D4AF37;
+  border-bottom-color: #d4af37;
   border-bottom-width: 1px;
 `;
 
@@ -38,15 +39,11 @@ const Wrapper = styled(Grid)`
 `;
 
 const Left = styled(Grid)`
-  /* display: flex;
-  margin: auto;
-  align-content: center;
-  flex: 1; */
+  padding-right: 30px;
   ${mobile({ display: "none" })}
 `;
 
 const Center = styled(Grid)`
-
   ${mobile({ flex: 0, justifyContent: "left" })}
 `;
 const Right = styled(Grid)`
@@ -62,9 +59,6 @@ const SearchContainer = styled("div")`
   align-items: center;
   margin-left: 25px;
   padding: 10px;
-  border-bottom-style: solid;
-  border-bottom-color: #000000;
-  border-bottom-width: 1px;
   ${mobile({ display: "none" })}
 `;
 
@@ -113,22 +107,24 @@ const Navbar = () => {
         justifyContent="space-between"
         alignItems="center"
       >
-        <Right item>
-          <SearchContainer>
-          <TextField
-          id="outlined-search"
-          label="חיפוש"
-          type="search"
-          
-          color="secondary"
-        />
-            
-          </SearchContainer>
-          <PhoneNumber href="tel:03-6825549">
-            03-6825549
-            <Phone />
-          </PhoneNumber>
-        </Right>
+        <Left item>
+          <Grid xs container direction="row">
+            <MenuItem item>
+              <Instagram color="error" fontSize="large" />
+            </MenuItem>
+            <MenuItem item>
+              <Facebook color="error" fontSize="large" />
+            </MenuItem>
+            <MenuItem item>
+              <AccountCircle color="error" fontSize="large" />
+            </MenuItem>
+            <MenuItem>
+              <Badge badgeContent={0} color="primary">
+                <ShoppingCartOutlined color="error" fontSize="large" />
+              </Badge>
+            </MenuItem>
+          </Grid>
+        </Left>
         <Center item>
           <ButtonBase
             sx={{ width: 340, height: 140 }}
@@ -139,25 +135,22 @@ const Navbar = () => {
             <Logo alt="complex" src={logo}></Logo>
           </ButtonBase>
         </Center>
-        <Left item>
-          <Grid xs container direction="row">
-
-          <MenuItem item>
-            <Instagram color="error" fontSize="large" />
-          </MenuItem>
-          <MenuItem item>
-            <Facebook color="error" fontSize="large" />
-          </MenuItem>
-          <MenuItem item>
-            <AccountCircle color="error" fontSize="large" />
-          </MenuItem>
-          <MenuItem>
-            <Badge badgeContent={0} color="primary">
-              <ShoppingCartOutlined color="error" fontSize="large" />
-            </Badge>
-          </MenuItem>
-          </Grid>
-        </Left>
+        <Right item>
+          <SearchContainer>
+            <TextField
+              error
+              id="outlined-search"
+              label="חיפוש"
+              type="search"
+              color="secondary"
+              sx={{Input:{ color: '#f44336' } }}
+            />
+          </SearchContainer>
+          <PhoneNumber href="tel:03-6825549">
+            03-6825549
+            <Phone />
+          </PhoneNumber>
+        </Right>
       </Wrapper>
     </Container>
   );
